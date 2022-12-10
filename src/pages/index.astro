@@ -1,0 +1,28 @@
+---
+
+const data = await fetch('http://localhost:3001/joke', {
+	method: 'POST',
+	headers: {
+		'Content-Type' : 'application/json'
+	},
+	body: JSON.stringify({
+		type: 'Programming'
+	})
+})
+const p1 = data.body
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Main</title>
+	</head>
+	<body class="w-full h-screen flex flex-col justify-center items-center">
+		<h1>Astro</h1>
+		{p1}
+	</body>
+</html>
